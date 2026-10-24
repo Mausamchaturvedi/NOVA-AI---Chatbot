@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101322" />
+  <title>Nova AI Chatbot</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-icon">✦</div><div><strong>Nova AI</strong><span>Gemini Assistant</span></div></div>
+      <button class="new-chat" id="newChatBtn">＋ <span>New chat</span></button>
+      <div class="side-label">RECENT CHATS</div>
+      <div id="chatList" class="chat-list"></div>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div><span id="connectionStatus">Checking connection…</span>
+        <button class="icon-btn small" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open sidebar">☰</button>
+        <div class="mobile-brand">✦ Nova AI</div>
+        <div class="model-pill"><span class="live-dot"></span> Gemini AI</div>
+      </header>
+
+      <section class="conversation" id="conversation">
+        <div class="welcome" id="welcome">
+          <div class="hero-icon">✦</div>
+          <p class="eyebrow">YOUR AI ASSISTANT</p>
+          <h1>What can I help you <span>with?</span></h1>
+          <p class="welcome-copy">Ask questions, learn something new, or get help with your next idea.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain artificial intelligence in simple words."><span>✧</span><b>Learn something</b><small>Explain AI in simple words</small></button>
+            <button class="suggestion" data-prompt="Create a simple study timetable for a college student."><span>▦</span><b>Plan my day</b><small>Make a study timetable</small></button>
+            <button class="suggestion" data-prompt="Give me five beginner-friendly JavaScript project ideas."><span>⌘</span><b>Write some code</b><small>Explore coding projects</small></button>
+            <button class="suggestion" data-prompt="Give me tips to prepare for a college viva."><span>✎</span><b>Prepare for viva</b><small>Practice with confidence</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="8000" placeholder="Message Nova…" aria-label="Message Nova"></textarea>
+          <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <div class="composer-note">Nova can make mistakes. Verify important information.</div>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
